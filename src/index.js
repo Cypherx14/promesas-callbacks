@@ -4,7 +4,7 @@ import {buscarHeroe } from './js/promesas';
 import './styles.css';
 
 const heroeId = 'capi';
-const heroeId2 = 'iron';
+const heroeId2 = 'iron2';
 
 
 // buscarHeroe(heroeId).then(heroe =>{
@@ -19,6 +19,8 @@ Promise.all([buscarHeroe(heroeId), buscarHeroe(heroeId2)])
     .then(([heroe1, heroe2])=>{
     // console.log('promise.all', heroes);
     console.log(`Enviando a ${heroe1.nombre} y ${heroe2.nombre} a la mision`);
+}).catch(err =>{
+    alert(err);
 });
 
 
