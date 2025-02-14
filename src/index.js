@@ -7,8 +7,19 @@ const heroeId = 'capi';
 const heroeId2 = 'iron';
 
 
-buscarHeroe(heroeId).then();
+// buscarHeroe(heroeId).then(heroe =>{
+//     console.log(`Enviando a ${heroe.nombre} a la mision`);
+//     buscarHeroe(heroeId2).then(heroe2=>{
+//         console.log(`Enviando a ${heroe.nombre} y ${heroe2.nombre} a la mision`);
+//     });
+// });
 
+//se puede resumir de esta manera
+Promise.all([buscarHeroe(heroeId), buscarHeroe(heroeId2)])
+    .then(([heroe1, heroe2])=>{
+    // console.log('promise.all', heroes);
+    console.log(`Enviando a ${heroe1.nombre} y ${heroe2.nombre} a la mision`);
+});
 
 
 console.log('Fin de programa');
